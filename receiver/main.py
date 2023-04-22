@@ -35,12 +35,12 @@ def req():
 		url = 'http://127.0.0.1/DoorClose'
 		r = requests.post(url, json={"Requested": True})
 		print(r.json())
-	elif item == "BlindOpen":
-		url = 'http://127.0.0.1/BlindOpen'
+	elif item == "BlindUP":
+		url = 'http://127.0.0.1/BlindsUP'
 		r = requests.post(url, json={"Requested": True})
 		print(r.json())
-	elif item == "BlindClose":
-		url = 'http://127.0.0.1/BlindClose'
+	elif item == "BlindsDown":
+		url = 'http://127.0.0.1/BlindsDown'
 		r = requests.post(url, json={"Requested": True})
 		print(r.json())
 	
