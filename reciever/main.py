@@ -8,8 +8,8 @@ sock = socket.socket(socket.AF_INET, # Internet
 sock.bind((UDP_IP, UDP_PORT))
 
 while True:
-    data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
-    parse = ("%s" % data)
-   
-    parse.split("x06")
-    print(parse)
+	data, addr = sock.recvfrom(1024) # buffer size is 1024 bytes
+	parse = ("%s" % data)
+	
+	n = parse.split("\\x06")
+	print(parse)
