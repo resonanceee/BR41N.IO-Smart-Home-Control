@@ -39,9 +39,9 @@ def req():
 while True:
 	data, addr = sock.recvfrom(10000)
 	parse = ("%s" % data)
-	n = parse.split("\\x06")
-	parse = n[2]
-	n = parse.split("\\t")
+	n = parse.split("itz_") 
+	parse = n[1]
+	n = parse.split("_zti")
 	item = n[0]
 	req()
 
