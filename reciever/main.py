@@ -12,4 +12,4 @@ while True:
 	parse = ("%s" % data)
 	
 	n = parse.split("\\x06")
-	print(parse)
+	print(n)
