@@ -11,37 +11,21 @@ sock.bind((UDP_IP, UDP_PORT))
 changed = " "
 
 def req():
-	if item == "LightOn":
-		url = 'http://127.0.0.1/LightOn1'
-		r = requests.post(url, json={"Requested": True})
+	if item == "Light1":
+		url = 'http://127.0.0.1:3000/l1'
+		r = requests.post(url)
 		print(r.json())
-	elif item == "LightOff":
-		url = 'http://127.0.0.1/LightOff1'
-		r = requests.post(url, json={"Requested": True})
+	elif item == "Light2":
+		url = 'http://127.0.0.1:3000/l2'
+		r = requests.post(url)
 		print(r.json())
-	elif item == "LightOn2":
-		url = 'http://127.0.0.1/LightOn2'
-		r = requests.post(url, json={"Requested": True})
+	elif item == "Door":
+		url = 'http://127.0.0.1:3000/d'
+		r = requests.post(url)
 		print(r.json())
-	elif item == "LightOff2":
-		url = 'http://127.0.0.1/LightOff2'
-		r = requests.post(url, json={"Requested": True})
-		print(r.json())
-	elif item == "DoorOpen":
-		url = 'http://127.0.0.1/DoorOpen'
-		r = requests.post(url, json={"Requested": True})
-		print(r.json())
-	elif item == "DoorClose":
-		url = 'http://127.0.0.1/DoorClose'
-		r = requests.post(url, json={"Requested": True})
-		print(r.json())
-	elif item == "BlindUP":
-		url = 'http://127.0.0.1/BlindsUP'
-		r = requests.post(url, json={"Requested": True})
-		print(r.json())
-	elif item == "BlindsDown":
-		url = 'http://127.0.0.1/BlindsDown'
-		r = requests.post(url, json={"Requested": True})
+	elif item == "Blind":
+		url = 'http://127.0.0.1:3000/b'
+		r = requests.post(url)
 		print(r.json())
 	
 
