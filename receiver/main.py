@@ -11,12 +11,39 @@ sock.bind((UDP_IP, UDP_PORT))
 changed = " "
 
 def req():
-	item = parse()
-	url = 'http://127.0.0.1/item'
-
-	r = requests.post(url, json={"Item": item})
-
-	print(r.json())	
+	if item == "LightOn":
+		url = 'http://127.0.0.1/LightOn1'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "LightOff":
+		url = 'http://127.0.0.1/LightOff1'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "LightOn2":
+		url = 'http://127.0.0.1/LightOn2'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "LightOff2":
+		url = 'http://127.0.0.1/LightOff2'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "DoorOpen":
+		url = 'http://127.0.0.1/DoorOpen'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "DoorClose":
+		url = 'http://127.0.0.1/DoorClose'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "BlindOpen":
+		url = 'http://127.0.0.1/BlindOpen'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	elif item == "BlindClose":
+		url = 'http://127.0.0.1/BlindClose'
+		r = requests.post(url, json={"Requested": True})
+		print(r.json())
+	
 
 while True:
 	data, addr = sock.recvfrom(1024)
@@ -30,6 +57,8 @@ while True:
 	else:
 		print("No changes")
 	changed = item 
+
+
 	
 	
 
