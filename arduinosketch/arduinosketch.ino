@@ -11,6 +11,7 @@ int doorpin = 11;
 bool led1 = false;
 bool led2 = false;
 bool door = false;
+bool blind = false;
 
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
@@ -78,6 +79,13 @@ void convertToState(char chr) {
     }
   }
   if(chr=='i'){
-    stepper1.step(9000);
+    if (blind == false) {
+      stepper1.step(-5000);
+      blind = true;
+    } else {
+      stepper1.step(5000);
+      blind = false;
+    }
+    
   }
 }
