@@ -8,29 +8,26 @@ sock = socket.socket(socket.AF_INET, # Internet
 					 socket.SOCK_DGRAM) # UDP
 sock.bind((UDP_IP, UDP_PORT))
 
-changed = " "
-
 def req():
 	if item == "Light1":
-		url = 'http://127.0.0.1:3000/l1'
-		r = requests.post(url)
-		print(r.json())
+		url = 'http://127.0.0.1:3000/l/1'
+		r = requests.get(url)
+		 
 		print("Light1")
 
 	elif item == "Light2":
-		url = 'http://127.0.0.1:3000/l2'
-		r = requests.post(url)
-		print(r.json())
+		url = 'http://127.0.0.1:3000/l/2'
+		r = requests.get(url)
+		 
 		print("Light2")
 	elif item == "Door":
 		url = 'http://127.0.0.1:3000/d'
-		r = requests.post(url)
-		print(r.json())
+		r = requests.get(url)
 		print("Door")
 	elif item == "Blind":
 		url = 'http://127.0.0.1:3000/b'
-		r = requests.post(url)
-		print(r.json())
+		r = requests.get(url)
+		 
 		print("blind")
 	else:
 		pass
@@ -43,6 +40,7 @@ while True:
 	parse = n[1]
 	n = parse.split("_zti")
 	item = n[0]
+	print(item)
 	req()
 
 

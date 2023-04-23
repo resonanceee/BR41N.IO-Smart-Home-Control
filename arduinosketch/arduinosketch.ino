@@ -1,6 +1,9 @@
 #include <Servo.h>;
 Servo servo;
 
+#include <Stepper.h>
+Stepper stepper1(32, 4,5,6,7);
+
 int led1pin = 13;
 int led2pin = 12;
 int doorpin = 11;
@@ -16,6 +19,7 @@ void setup() {
   
   servo.attach(doorpin);
 
+  stepper1.setSpeed(550);
   pinMode(led1pin, OUTPUT);
   pinMode(led2pin, OUTPUT);
 
@@ -72,5 +76,8 @@ void convertToState(char chr) {
     } else {
       door = false;
     }
+  }
+  if(chr=='i'){
+    stepper1.step(9000);
   }
 }

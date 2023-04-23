@@ -7,6 +7,14 @@ const port = new SerialPort({
   baudRate: 9600,
 })
 
+function log(req, res, next) {
+  console.log("request")
+  console.log(req.path)
+  next();
+}
+
+app.use(log)
+
 port.on('readable', function () {
   console.log('Data:', port.read())
 })
@@ -15,6 +23,11 @@ app.get("/d", (req, res) => {
     var led = req.params.led;
     port.write("d")
     res.status("200").send("Done.")
+})
+
+app.get("/b", (req, res) => {
+  port.write("i")
+  res.status("200").send("Done.")
 })
 
 app.get("/l/:id?", (req, res) => {
