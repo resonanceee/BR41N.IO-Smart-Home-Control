@@ -1,3 +1,5 @@
+//This program is called in index.js and is used to interact with the arduino components
+
 #include <Servo.h>;
 Servo servo;
 
