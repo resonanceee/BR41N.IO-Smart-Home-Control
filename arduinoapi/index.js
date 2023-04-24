@@ -1,3 +1,5 @@
+//This program receives the data that has been cleaned in main.py and sends controls to the arduinosketch.ino file.
+
 const express = require('express');
 const app = express();
 
